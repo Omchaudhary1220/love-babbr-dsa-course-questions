@@ -1,3 +1,4 @@
+//count of 1 bit in a binary number
 #include<iostream>
 using namespace std;
 int number_of_ones(int n);
