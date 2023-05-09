@@ -39,6 +39,7 @@ int lastOcc(int arr[],int n,int k){
 }
 
 int main(){
+    //If we want to find the number of occrunce of the number then we can return lastocc()-firstocc()+1.
     int arr[]={1,2,3,4,4,5};
     int n=(sizeof(arr)/sizeof(int));
     int k=4;
