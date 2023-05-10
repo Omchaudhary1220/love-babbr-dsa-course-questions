@@ -21,10 +21,9 @@ class Solution {
 public:
     int peakIndexInMountainArray(vector<int>& arr) {
         int first=0,last=arr.size()-1;
-        int mid,count=1;
+        int mid;
         mid=first+(last-first)/2;
         while(first<last){
-            count++;
             if(arr[mid]<arr[mid+1]){
                 first=mid+1;
             }
@@ -33,7 +32,6 @@ public:
             }
             mid=first+(last-first)/2;
         }
-        cout<<count<<endl;
         return mid;
     }
 };
