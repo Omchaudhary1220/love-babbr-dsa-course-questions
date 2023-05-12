@@ -1,61 +1,42 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int pivotindex(vector<int>& arr,int n);
-int binarysearch(vector<int>& arr,int l,int h,int k);
-int search(vector<int>& arr, int n, int k);
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int start=0,end=nums.size()-1;
+        int mid= (start+end)/2;
+        while(start<=end){
+            mid=(start+end)/2;
+            if(target==nums[mid]){
+                return mid;
+            }
+            if(nums[start]<=nums[mid]){
+                if(nums[start]<=target && nums[mid]>=target){
+                    end=mid-1;
+                }
+                else{
+                    start=mid+1;
+                }
+            }
+            else{
+                if(nums[end]>=target && nums[mid]<=target){
+                    start=mid+1;
+                }
+                else{
+                    end=mid-1;
+                }
+            }
+        }
+        return -1;
+    }
+};
 
 int main(){
     vector<int> v1;
     v1={7,8,1,2,3};
-    int n=v1.size();
-    int ans=search(v1,n,2);
+    Solution obj;
+    int ans=obj.search(v1,3);
     cout<<"ans is "<<ans<<endl;
     return 0;
 }
-int pivotindex(vector<int>& arr,int n){
-    int l=0,h=n-1;
-    int mid;
-    mid=l+(h-l)/2;
-    while(l<h){
-        if(arr[mid]>=arr[0]){
-            l=mid+1;
-        }
-        else{
-            h=mid;
-        }
-      mid=l+(h-l)/2;
-    }
-    return mid;
-}
-int binarysearch(vector<int>& arr,int l,int h,int k){
-    int mid=-1;
-    while(l<=h){
-        mid=l+(h-l)/2;
-        if(arr[mid]==k){
-            return mid;
-        }
-        else if(k>arr[mid]){
-            l=mid+1;
-        }
-        else{
-            h=mid-1;
-        }
-    }
-    return -1;
-}
-
-int search(vector<int>& arr, int n, int k)
-{
-    int pivot=pivotindex(arr,n);
-    if(arr[pivot]==k){
-        return pivot;
-    }
-    else if((k>arr[pivot])&&(k<arr[n-1])){
-        return binarysearch(arr,pivot,n-1,k);
-    }
-    else{
-        return binarysearch(arr,0, pivot-1,k);
-    }
-}
-
