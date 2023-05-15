@@ -1,3 +1,4 @@
+//smallest element in array is known as pivot(in our case).
 #include<iostream>
 using namespace std;
 int pivotindex(int arr[],int n){
