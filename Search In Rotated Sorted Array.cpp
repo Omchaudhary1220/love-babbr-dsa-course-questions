@@ -31,7 +31,7 @@ public:
         return -1;
     }
 };
-
+//Second approch is finding the pivot(smallest element) index then calling binary search according to which part element is present.
 int main(){
     vector<int> v1;
     v1={7,8,1,2,3};
