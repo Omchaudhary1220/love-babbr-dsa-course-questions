@@ -37,7 +37,8 @@ int ispossible(long long int arr[],long long int mid,long long int n,long long i
     }
 }
 long long int search(long long int arr[],long long int n,long long int m){
-    long long int s=0,e=arr[n-1];
+    long long int s=0;
+   long long int e=*max_element(arr,arr+n);
     long long int mid;
     mid=s+(e-s)/2;
     long long int ans=-1;
