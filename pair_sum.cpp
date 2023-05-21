@@ -1,3 +1,4 @@
+Link:- https://www.codingninjas.com/codestudio/problems/pair-sum_1171154
 #include<iostream>
 using namespace std;
 void pair_sum(int arr[],int n,int k){
