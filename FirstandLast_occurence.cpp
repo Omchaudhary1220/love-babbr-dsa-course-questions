@@ -1,3 +1,4 @@
+Link:- https://www.codingninjas.com/codestudio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549
 //The brute-force solution is linear search from start to first element and last to first element.
 #include<iostream>
 using namespace std;
