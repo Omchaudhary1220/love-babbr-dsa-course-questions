@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 void swap(int *p, int *q) {
   int temp = *p;
   *p = *q;
