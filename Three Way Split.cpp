@@ -23,3 +23,32 @@ long long threeWaySplit(int n, vector<int> arr){
       return ans;
 }
 //Optimise solution O(n) time complexity
+long long threeWaySplit(int n, vector<int> arr){
+      long long sum1=0,sum2=0,ans=0;
+      int i=0,j=n-1;
+      if(n==1){
+          return 0;
+      }
+      sum1=arr[i];
+      i++;
+      sum2=arr[j];
+      j--;
+      if(sum1==sum2){
+          ans=sum1;
+      }
+      while(i<=j){
+          if(sum1<sum2){
+            sum1+=arr[i];
+            i++;
+              
+          }
+          else{
+              sum2+=arr[j];
+              j--;
+          }
+          if(sum1==sum2){
+              ans=sum1;
+          }
+      }
+      return ans;
+}
