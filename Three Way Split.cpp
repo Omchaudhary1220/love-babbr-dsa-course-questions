@@ -1,6 +1,6 @@
 Link:- https://www.codingninjas.com/codestudio/contests/love-babbar-contest-l/3189127/problems/15017?leftPanelTab=0
 #include <bits/stdc++.h> 
-//Brute-force solution
+//Brute-force solution with O(n^2) time complexity
 long long threeWaySplit(int n, vector<int> arr){
       long long sum1=0,sum2=0,ans=0;
       int i,j;
@@ -22,3 +22,4 @@ long long threeWaySplit(int n, vector<int> arr){
       }
       return ans;
 }
+//Optimise solution O(n) time complexity
