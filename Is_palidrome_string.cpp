@@ -6,20 +6,6 @@ void swap(char* p,char* q){
     *q=temp;
 }
 //using extra space
-bool pal(string str){
-    int i=0,j=str.size()-1;
-    while(i<j){
-        if(str[i++]!=str[j--]){
-            return 0;
-        }
-        else{
-            return 1;
-        }
-    }
-    return 0;
-}
-
-//without using extra space 
 bool palidrome(string str){
     string s=str;
     reverse(s.begin(),s.end());
@@ -28,8 +14,18 @@ bool palidrome(string str){
     }
     else{
         return 0;
+    }  
+}
+
+//without using extra space 
+bool pal(string str){
+    int i=0,j=str.size()-1;
+    while(i<j){
+        if(str[i++]!=str[j--]){
+            return 0;
+        }
     }
-    
+    return 1;
 }
 int main(){
     string str;
