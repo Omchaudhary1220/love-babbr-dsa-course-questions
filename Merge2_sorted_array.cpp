@@ -23,18 +23,12 @@ vector<int> merge(vector<int>arr,int n1,vector<int>arr1,int n2){
     int i=0,j=0;
     vector<int>ans;
     while(i<n1&&j<n2){
-        if(arr[i]<arr1[j]){
+        if(arr[i]<=arr1[j]){
             ans.push_back(arr[i]);
             i++;
-        }
-        else if(arr[i]>arr1[j]){
-            ans.push_back(arr1[j]);
-            j++;
         }
         else{
-            ans.push_back(arr[i]);
             ans.push_back(arr1[j]);
-            i++;
             j++;
         }
     }
